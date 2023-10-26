@@ -144,8 +144,8 @@ const submit = () => {
           <div>16.12.23</div>
         </div>
         <div class="">
-          <div>Sự hiện diện của quý khách</div>
-          <div>là niềm vinh hạnh của chúng tôi</div>
+          <div>Sự hiện diện của bạn</div>
+          <div>là niềm vinh hạnh cho gia đình chúng tôi!</div>
         </div>
       </div>
     </div>
