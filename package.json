@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@splidejs/vue-splide": "^0.6.12",
+    "airtable": "^0.12.2",
     "autoprefixer": "^10.4.16",
     "nuxt-lazy-load": "^3.0.4",
     "postcss": "^8.4.31",

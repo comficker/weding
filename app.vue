@@ -1,5 +1,12 @@
 <script lang="ts" setup>
+const AIR_KEY = 'patLzYGhyd5rcc70K.1a7f1944212e6098ea80982d15d955af4a1c74161e0b760991ee6387b5fe6b07'
+import Airtable from "airtable";
+
+const base = new Airtable({apiKey: AIR_KEY}).base('app5Pi0BXnTHpo8V7');
+
+
 useHead({
+  title: "Nghĩa Hương weding",
   link: [
     {
       href: "https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Garamond:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap",
@@ -7,6 +14,8 @@ useHead({
     }
   ]
 })
+
+const completed = ref(false)
 
 const form = ref({
   name: "",
@@ -23,7 +32,48 @@ onMounted(() => {
     }, timeout)
     timeout = timeout + 1000
   })
+
+  const the_animation = document.querySelectorAll('.animation')
+  const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('scroll-animation')
+          } else {
+            entry.target.classList.remove('scroll-animation')
+          }
+
+        })
+      },
+      {
+        threshold: 0.5
+      });
+  for (let i = 0; i < the_animation.length; i++) {
+    const elements = the_animation[i];
+    observer.observe(elements);
+  }
 })
+
+const submit = () => {
+  completed.value = false
+  base('Table 1').create([
+    {
+      "fields": {
+        name: form.value.name,
+        people: form.value.amount.toString(),
+        note: form.value.note
+      }
+    }
+  ], function (err: string) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    form.value.note = ''
+    form.value.amount = 1
+    form.value.name = ''
+    completed.value = true
+  });
+}
 </script>
 <template>
   <div v-if="false" id="s5" class="h-screen flex">
@@ -56,7 +106,7 @@ onMounted(() => {
     </div>
   </div>
   <div id="s2" class="md:h-screen bg-white text-center leading-6">
-    <div class="max-w-2xl mx-auto space-y-6 py-8 font-lora p-4">
+    <div class="max-w-2xl mx-auto space-y-6 py-8 font-lora p-4 animation">
       <div>
         <img class="w-32 md:w-52 mx-auto" src="/logo.png" alt="logo"/>
       </div>
@@ -72,10 +122,10 @@ onMounted(() => {
           <div>Bà <span class="uppercase font-semibold">Nguyễn thị hồng hạnh</span></div>
         </div>
       </div>
-      <p class="">Trân trọng kính mời</p>
+      <p class="">Trân trọng kính mời bạn</p>
       <div class="">
         <p>-----------------------------------</p>
-        <p>Đến dự buổi tiệc mừng Lễ thành Hôn cùng gia đình chúng tôi</p>
+        <p>Đến dự buổi tiệc mừng Lễ Thành Hôn cùng gia đình chúng tôi</p>
       </div>
       <div class=" font-valky uppercase text-3xl md:text-5xl">
         <div>Trọng Nghĩa</div>
@@ -99,7 +149,7 @@ onMounted(() => {
         </div>
         <div class="">
           <div>Sự hiện diện của quý khách</div>
-          <div>Là niềm vinh hạnh của chúng tôi</div>
+          <div>là niềm vinh hạnh của chúng tôi</div>
         </div>
       </div>
     </div>
@@ -111,7 +161,7 @@ onMounted(() => {
     </div>
   </div>
   <div id="s4" class="w-full p-4 space-y-4">
-    <div class="text-center font-cormorant uppercase text-3xl">khoảng khắc ngọt ngào</div>
+    <div class="text-center font-cormorant uppercase text-2xl md:text-3xl">khoảng khắc ngọt ngào</div>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
       <div class="h-full flex items-center" v-for="i in 15">
         <img :src="`/img/slider/${i}.jpg`" class="w-full my-auto" alt="">
@@ -120,7 +170,7 @@ onMounted(() => {
   </div>
   <div id="s6" class="md:h-screen relative overflow-hidden flex items-center py-6">
     <div class="wrap absolute inset-0 blur-sm"></div>
-    <div class="relative z-10 max-w-3xl mx-auto font-myriad-pro font-valky p-4 space-y-6">
+    <div class="relative z-10 max-w-3xl mx-auto font-myriad-pro p-4 space-y-6">
       <div>
         <div class="font-valky text-3xl">Bạn sẽ đến chứ?</div>
         <p>Đám cưới của chúng tôi sẽ trọn vẹn hơn khi có thêm lời chúc phúc và sự hiện diện của các bạn. Xin hãy xác
@@ -158,8 +208,13 @@ onMounted(() => {
                         class="bg-white outline-none hover:outline-none block w-full border-0 py-1.5 text-gray-900 shadow-sm placeholder:text-gray-400 p-3"/>
             </div>
           </div>
-          <div class="">
-            <div class="inline-flex p-12 py-3 cursor-pointer bg-[#58585a] text-white leading-none">Gửi</div>
+          <div class="flex gap-4 items-center">
+            <div
+                class="inline-flex p-12 py-3 cursor-pointer bg-[#58585a] text-white leading-none"
+                @click="submit"
+            >Gửi
+            </div>
+            <p v-if="completed" class="italic font-myriad-pro">Gửi thành công</p>
           </div>
         </div>
       </div>
@@ -205,5 +260,18 @@ onMounted(() => {
 .animate-wiggle.force {
   opacity: 1;
   transform: translateY(0);
+}
+
+.animation {
+  opacity: 0;
+  transform: translateY(300px);
+  transition: all 0.7s ease-out;
+  transition-delay: 0.4s;
+
+}
+
+.scroll-animation {
+  opacity: 1;
+  transform: translateX(0);
 }
 </style>
