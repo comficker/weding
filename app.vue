@@ -133,7 +133,7 @@ const submit = () => {
       </div>
       <div class="space-y-4">
         <div class="">
-          <div class="uppercase font-semibold font-cormorant text-xl md:text-3xl">Sen Start Palace</div>
+          <div class="uppercase font-semibold font-cormorant text-xl md:text-3xl">Sen Star Palace</div>
           <div>127 Nhật Chiêu, Tây Hồ, Hà Nội</div>
         </div>
         <div class="flex justify-center gap-6 uppercase font-semibold font-valky text-xl md:text-2xl">
@@ -159,7 +159,7 @@ const submit = () => {
   <div id="s4" class="w-full p-4 space-y-4">
     <div class="text-center font-cormorant uppercase text-2xl md:text-3xl">khoảng khắc ngọt ngào</div>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-      <div class="h-full flex items-center" v-for="i in 15">
+      <div class="h-full flex items-center" v-for="i in 16">
         <img :src="`/img/slider/${i}.jpg`" class="w-full my-auto" alt="">
       </div>
     </div>
