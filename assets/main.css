@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: DFVN;
+    src: url("./fonts/DFVN.otf");
+}
+
+@font-face {
+    font-family: MyriadPro;
+    src: url("./fonts/MyriadPro-Regular.otf");
+}
+
+
+@font-face {
+    font-family: Valky;
+    src: url("./fonts/NVNValky-Light.ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Valky;
+    src: url("./fonts/NVNValky-Regular.ttf");
+}
+
+.font-cinzel {
+    font-family: 'Cinzel', serif;
+}
+
+.font-lora {
+    font-family: 'Lora', serif;
+}
+
+.font-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.font-dfvn {
+    font-family: 'DFVN', serif;
+}
+
+.font-myriad-pro {
+    font-family: 'MyriadPro', serif;
+}
+
+.font-valky {
+    font-family: 'Valky', serif;
+}
+
+body {
+    color: #58585a;
+}
