@@ -124,7 +124,6 @@ const submit = () => {
       </div>
       <p class="">Trân trọng kính mời bạn</p>
       <div class="">
-        <p>-----------------------------------</p>
         <p>Đến dự buổi tiệc mừng Lễ Thành Hôn cùng gia đình chúng tôi</p>
       </div>
       <div class=" font-valky uppercase text-3xl md:text-5xl">
