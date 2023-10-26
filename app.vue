@@ -158,7 +158,7 @@ const submit = () => {
   </div>
   <div id="s4" class="w-full p-4 space-y-4">
     <div class="text-center font-cormorant uppercase text-2xl md:text-3xl">khoảng khắc ngọt ngào</div>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
       <div class="h-full flex items-center" v-for="i in 16">
         <img :src="`/img/slider/${i}.jpg`" class="w-full my-auto" alt="">
       </div>
