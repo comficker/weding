@@ -41,18 +41,18 @@ onMounted(() => {
       <img class="w-3/4" src="/img/bg5.png" alt="">
     </div>
   </div>
-  <div id="s1" class="h-screen flex md:items-center py-16 relative">
+  <div id="s1" class="h-screen flex md:items-center py-24 md:py-16 relative">
     <div class="absolute bottom-0 right-0 flex justify-end items-end w-full md:w-1/2">
       <img class="w-full" src="/img/bg5.png" alt="">
     </div>
     <div class="relative z-10 max-w-2xl mx-auto text-center space-y-4 md:space-y-8">
-      <div class="md:text-xl font-lora text-gray-500 animate-wiggle">Welcome to our wedding</div>
-      <div class="font-valky uppercase text-7xl">
+      <div class="text-xl font-lora text-gray-500 animate-wiggle">Welcome to our wedding</div>
+      <div class="font-valky uppercase text-5xl md:text-7xl">
         <div class="animate-wiggle">Trọng Nghĩa</div>
         <div class="animate-wiggle text-2xl">&</div>
         <div class="animate-wiggle">Lan Hương</div>
       </div>
-      <div class="animate-wiggle text-lg text-gray-600 font-valky">16.12.2023</div>
+      <div class="animate-wiggle text-xl text-gray-600 font-valky">16.12.2023</div>
     </div>
   </div>
   <div id="s2" class="md:h-screen bg-white text-center leading-6">
@@ -127,7 +127,7 @@ onMounted(() => {
           nhận sự có mặt của mình để chúng tôi chuẩn bị đón tiếp một cách chu đáo nhất nhé! Trân trọng!</p>
       </div>
       <div>
-        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+        <div class="mt-6 space-y-6">
           <div class="sm:col-span-6">
             <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Tên của bạn</label>
             <div class="mt-2">
@@ -157,6 +157,9 @@ onMounted(() => {
               <textarea v-model="form.note" id="about" name="about" rows="3"
                         class="bg-white outline-none hover:outline-none block w-full border-0 py-1.5 text-gray-900 shadow-sm placeholder:text-gray-400 p-3"/>
             </div>
+          </div>
+          <div class="">
+            <div class="inline-flex p-12 py-3 cursor-pointer bg-[#58585a] text-white leading-none">Gửi</div>
           </div>
         </div>
       </div>
