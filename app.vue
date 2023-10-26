@@ -122,10 +122,7 @@ const submit = () => {
           <div>Bà <span class="uppercase font-semibold">Nguyễn thị hồng hạnh</span></div>
         </div>
       </div>
-      <p class="">Trân trọng kính mời bạn</p>
-      <div class="">
-        <p>Đến dự buổi tiệc mừng Lễ Thành Hôn cùng gia đình chúng tôi</p>
-      </div>
+      <p class="">Trân trọng kính mời bạn đến dự Lễ Thành Hôn của</p>
       <div class=" font-valky uppercase text-3xl md:text-5xl">
         <div>Trọng Nghĩa</div>
         <div class="text-2xl">&</div>
