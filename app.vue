@@ -217,7 +217,7 @@ const submit = () => {
       <div class="pt-4 space-y-2">
         <div class="font-valky text-3xl">Mừng cưới</div>
         <div class="md:w-1/2 grid grid-cols-2 gap-4">
-          <img src="/huong.jpg" alt="">
+          <img src="/huong.jpg" alt="ok">
           <img src="/nghia.jpg" alt="">
         </div>
       </div>
