@@ -91,7 +91,7 @@ const submit = () => {
       <img class="w-3/4" src="/img/bg5.png" alt="">
     </div>
   </div>
-  <div id="s1" class="h-screen flex md:items-center py-24 md:py-16 relative">
+  <div id="s1" class="min-h-screen flex md:items-center py-24 md:py-16 relative">
     <div class="absolute bottom-0 right-0 flex justify-end items-end w-full md:w-1/2">
       <img class="w-full" src="/img/bg5.png" alt="">
     </div>
@@ -105,7 +105,7 @@ const submit = () => {
       <div class="animate-wiggle text-xl text-gray-600 font-valky">16.12.2023</div>
     </div>
   </div>
-  <div id="s2" class="md:h-screen bg-white text-center leading-6">
+  <div id="s2" class="md:min-h-screen bg-white text-center leading-6">
     <div class="max-w-2xl mx-auto space-y-6 py-8 font-lora p-4 animation">
       <div>
         <img class="w-32 md:w-52 mx-auto" src="/logo.png" alt="logo"/>
@@ -164,7 +164,7 @@ const submit = () => {
       </div>
     </div>
   </div>
-  <div id="s6" class="md:h-screen relative overflow-hidden flex items-center py-6">
+  <div id="s6" class="md:min-h-screen relative overflow-hidden flex items-center py-6">
     <div class="wrap absolute inset-0 blur-sm"></div>
     <div class="relative z-10 max-w-3xl mx-auto font-myriad-pro p-4 space-y-6">
       <div>
@@ -222,6 +222,11 @@ const submit = () => {
         </div>
       </div>
     </div>
+    <figure class="fixed bottom-4 right-4 opacity-50">
+      <audio controls autoplay>
+        <source src="/enchanted.m4a" type="audio/x-m4a">
+      </audio>
+    </figure>
   </div>
 </template>
 
