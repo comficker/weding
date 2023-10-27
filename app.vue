@@ -222,11 +222,6 @@ const submit = () => {
         </div>
       </div>
     </div>
-    <figure class="fixed bottom-4 right-4 opacity-50">
-      <audio controls autoplay>
-        <source src="/enchanted.m4a" type="audio/x-m4a">
-      </audio>
-    </figure>
   </div>
 </template>
 
