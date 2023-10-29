@@ -53,8 +53,13 @@ onMounted(() => {
   }
 })
 
-const submit = () => {
+const submit = (e: { preventDefault: () => void; }) => {
   completed.value = false
+  if (!form.value.name || !form.value.amount) {
+    return
+  }
+  e.preventDefault()
+
   base('Table 1').create([
     {
       "fields": {
@@ -173,15 +178,18 @@ const submit = () => {
           nhận sự có mặt của mình để chúng tôi chuẩn bị đón tiếp một cách chu đáo nhất nhé! Trân trọng!</p>
       </div>
       <div>
-        <div class="mt-6 space-y-6">
+        <form class="mt-6 space-y-6">
           <div class="sm:col-span-6">
             <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Tên của bạn</label>
             <div class="mt-2">
               <div
-                  class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 outline-none focus:outline-none sm:max-w-md">
-                <input v-model="form.name" type="text" name="username" id="username" autocomplete="username"
-                       class="bg-white block flex-1 border-0 py-1.5 px-3 text-gray-900 placeholder:text-gray-400 outline-none"
-                       placeholder="Chenny"/>
+                class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 outline-none focus:outline-none sm:max-w-md">
+                <input
+                  required
+                  v-model="form.name" type="text" name="username" id="username" autocomplete="username"
+                  class="bg-white block flex-1 border-0 py-1.5 px-3 text-gray-900 placeholder:text-gray-400 outline-none"
+                  placeholder=""
+                />
               </div>
             </div>
           </div>
@@ -189,10 +197,13 @@ const submit = () => {
             <label for="member" class="block text-sm font-medium leading-6 text-gray-900">Số lượng người tham dự</label>
             <div class="mt-2">
               <div
-                  class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 outline-none focus:outline-none sm:max-w-md">
-                <input v-model="form.amount" type="number" name="member" id="member" autocomplete="username"
-                       class="bg-white block flex-1 border-0 py-1.5 px-3 text-gray-900 placeholder:text-gray-400 outline-none"
-                       placeholder="Chenny"/>
+                class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 outline-none focus:outline-none sm:max-w-md">
+                <input
+                  required
+                  v-model="form.amount" type="number" name="member" id="member" autocomplete="username"
+                  class="bg-white block flex-1 border-0 py-1.5 px-3 text-gray-900 placeholder:text-gray-400 outline-none"
+                  placeholder=""
+                />
               </div>
             </div>
           </div>
@@ -200,19 +211,21 @@ const submit = () => {
             <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Lời nhắn gửi của bạn cho cô dâu
               chú rể (nếu có)</label>
             <div class="mt-2">
-              <textarea v-model="form.note" id="about" name="about" rows="3"
-                        class="bg-white outline-none hover:outline-none block w-full border-0 py-1.5 text-gray-900 shadow-sm placeholder:text-gray-400 p-3"/>
+              <textarea
+                v-model="form.note" id="about" name="about" rows="3"
+                class="bg-white outline-none hover:outline-none block w-full border-0 py-1.5 text-gray-900 shadow-sm placeholder:text-gray-400 p-3"/>
             </div>
           </div>
           <div class="flex gap-4 items-center">
-            <div
-                class="inline-flex p-12 py-3 cursor-pointer bg-[#58585a] text-white leading-none"
-                @click="submit"
+            <button
+              type="submit"
+              class="inline-flex p-12 py-3 cursor-pointer bg-[#58585a] text-white leading-none"
+              @click="submit"
             >Gửi
-            </div>
+            </button>
             <p v-if="completed" class="italic font-myriad-pro">Gửi thành công</p>
           </div>
-        </div>
+        </form>
       </div>
       <div class="pt-4 space-y-2">
         <div class="font-valky text-3xl">Mừng cưới</div>
