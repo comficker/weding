@@ -127,7 +127,7 @@ const submit = (e: { preventDefault: () => void; }) => {
           <div>Bà <span class="uppercase font-semibold">Nguyễn thị hồng hạnh</span></div>
         </div>
       </div>
-      <p class="">Trân trọng kính mời bạn đến dự Lễ Thành Hôn của</p>
+      <p class="">Trân trọng kính mời Anh/Chị đến dự Lễ Thành Hôn của</p>
       <div class=" font-valky uppercase text-3xl md:text-5xl">
         <div>Trọng Nghĩa</div>
         <div class="text-2xl">&</div>
@@ -149,7 +149,7 @@ const submit = (e: { preventDefault: () => void; }) => {
           <div>16.12.23</div>
         </div>
         <div class="">
-          <div>Sự hiện diện của bạn</div>
+          <div>Sự hiện diện của Anh/Chị</div>
           <div>là niềm vinh hạnh cho gia đình chúng tôi!</div>
         </div>
       </div>
@@ -173,14 +173,14 @@ const submit = (e: { preventDefault: () => void; }) => {
     <div class="wrap absolute inset-0 blur-sm"></div>
     <div class="relative z-10 max-w-3xl mx-auto font-myriad-pro p-4 space-y-6">
       <div>
-        <div class="font-valky text-3xl">Bạn sẽ đến chứ?</div>
-        <p>Đám cưới của chúng tôi sẽ trọn vẹn hơn khi có thêm lời chúc phúc và sự hiện diện của các bạn. Xin hãy xác
+        <div class="font-valky text-3xl">Anh/Chị sẽ đến chứ?</div>
+        <p>Đám cưới của chúng tôi sẽ trọn vẹn hơn khi có thêm lời chúc phúc và sự hiện diện của các Anh/Chị. Xin hãy xác
           nhận sự có mặt của mình để chúng tôi chuẩn bị đón tiếp một cách chu đáo nhất nhé! Trân trọng!</p>
       </div>
       <div>
         <form class="mt-6 space-y-6">
           <div class="sm:col-span-6">
-            <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Tên của bạn</label>
+            <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Tên của Anh/Chị</label>
             <div class="mt-2">
               <div
                 class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 outline-none focus:outline-none sm:max-w-md">
@@ -208,7 +208,7 @@ const submit = (e: { preventDefault: () => void; }) => {
             </div>
           </div>
           <div class="col-span-full">
-            <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Lời nhắn gửi của bạn cho cô dâu
+            <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Lời nhắn gửi của Anh/Chị cho cô dâu
               chú rể (nếu có)</label>
             <div class="mt-2">
               <textarea
